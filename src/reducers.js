@@ -1,7 +1,32 @@
+export function books(state = [], action) {
+  switch (action.type) {
+    case "ADD_BOOK":
+      return [].concat(state, action.payload)
+    case "REMOVE_BOOK":
+      let idx = state.indexOf(action.payload)
+      return [].concat(state.slice(0, idx), state.slice(idx + 1, state.length))
+    default:
+      return state
+  }
+}
+
+
+export function recommendedBooks(state = [], action) {
+  switch (action.type) {
+    case "ADD_RECOMMENDED_BOOK":
+      return [].concat(state, action.payload)
+    case "REMOVE_RECOMMENDED_BOOK":
+      let idx = state.indexOf(action.payload)
+      return [].concat(state.slice(0, idx), state.slice(idx + 1, state.length))
+    default:
+      return state
+  }
+}
+
 
 // reducers = { "Sub-state name (property in state)": "reducer *name* of that sub-state" }
 
-export function combineReducers(reducers){
+export function combineReducers(reducers) {
 
   let masterReducer = (state = {}, action) => {
     let subStateNames = Object.keys(reducers)
