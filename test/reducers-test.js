@@ -1,6 +1,4 @@
-import { books, recommendedBooks, combineReducers } from '../src/reducers'
-
-
+import { books, recommendedBooks, combineReducers } from '../src/reducers';
 
 const addBook = "ADD_BOOK"
 const removeBook = "REMOVE_BOOK"
@@ -33,7 +31,6 @@ describe('books reducers', function() {
     expect(newState).toNotInclude(patterns)
   })
 })
-
 
 describe('combine reducers', function(){
   const rootReducer = combineReducers({recommendedBooks: recommendedBooks, books: books})
