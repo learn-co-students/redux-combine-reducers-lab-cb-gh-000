@@ -1,4 +1,4 @@
-# Redux Combine Reducers Lab
+#### Redux Combine Reducers Lab
 
 ## Objectives
 
